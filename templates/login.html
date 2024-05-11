@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | farmconnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="x-image" href="https://blogger.googleusercontent.com/img/a/AVvXsEjp-BCmawqzJaP8UcC6K-nk_2Lajigd0BPN5WlbRehuGgh4KJzlKZi8YMcxJBXth1gQZqdli2WAzDZOeVow3ET6NYYckBc7TT0fP29qdq9GqXI-E8l_vtfLi10jMBc3HYxUjeXxLzfdVLFKq8yS2hNT0Gh-VSVqmXLLbR85urz3NvLyxiHNaGUjSnGmC_3a">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjVNrkBFCWscYAHwPSTPTH6lvzUUYZyYBLRv8wNbW-tg2h_jQRdH7mYjxora_SAKgj_RNypCeaJTv94tN9mmV0w_KFrFgRZIDpMiSu_Buzda_lZwXA-_g3F9T04Wd9Y3KiWRMJscN76X04MSztA4cMqMakQadWj5Fr5Wd0wIYJ5T7OX2O4CKG0AUO43lv5F" alt="logo">
+        </div>
+    </header>
+    
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-apple"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-meta"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <span>or use your email id for registration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in">
+            <form action="/loginauthentication" class="loginform" method="post">
+                <h1>Login</h1>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=en&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-2147464671%3A1709698788446092&theme=glif" class="icon"><i class="fa-brands fa-google"></i></a>
+                   
+                    <a href="https://www.facebook.com/login" class="icon"><i class="fa-brands fa-meta"></i></a>
+                </div>
+                <span>or use your email id password</span>
+                <input type="email" placeholder="Email" id="email" name="email">
+                <input type="password" placeholder="Password" id="password" name="password">
+
+                <style>
+                    .error-message {
+                        color: red;
+                    }
+                </style>
+                {% if show_error %}
+                <p class="error-message">Invalid email or password. Please try again.</p>
+                {% endif %}
+
+                <a href="#">Forgot Password?</a>
+                <button>Login</button>
+            </form>
+        </div>
+        
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your Details to use the website</p>
+                    <button class="hidden" id="login" >Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Not having an account?</h1>
+                    <p>We got you signup here!</p>
+                    <a href="/signuppage"><button class="hidden" id="register">Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js" ></script>
+
+</body>
+</html>
