@@ -85,4 +85,4 @@ def loginauthentication():
     return render_template('login.html', show_error = bool(error_message), error_message = error_message)
         
 if __name__ == 'main':
-    app.run(debug = True)
+    app.run(debug = False, host = ''0.0.0.0)
